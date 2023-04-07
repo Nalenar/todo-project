@@ -15,7 +15,7 @@ const TaskInput = ({ addTodo }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`border border-gray-200 mx-3 rounded shadow-md ${
+      className={`border border-gray-200 mx-3 rounded shadow-md mb-2 ${
         !focus ? "h-12" : "h-30"
       }`}
     >

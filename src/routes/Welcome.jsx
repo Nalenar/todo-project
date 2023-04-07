@@ -5,13 +5,13 @@ const Welcome = () => {
     <main className="flex h-screen w-screen flex-row items-center justify-center">
       {/* leftImage */}
       <div className="hidden">
-        <img src="src/assets/welcome-page/welcome-left.png" alt="happy man" />
+        <img src="assets/welcome-page/welcome-left.png" alt="happy man" />
       </div>
 
       {/* hero */}
       <div className="flex h-full flex-col items-center justify-center">
         <img
-          src="src/assets/welcome-page/logo.png"
+          src="assets/welcome-page/logo.png"
           alt="logo"
           className="w-24"
         />
@@ -19,7 +19,7 @@ const Welcome = () => {
           <h1 className="mb-5 text-5xl">To Do</h1>
           <img
             className="max-w- lg:hidden"
-            src="src/assets/welcome-page/welcome-center.png"
+            src="assets/welcome-page/welcome-center.png"
             alt="happy women and men"
           />
           <p className="my-3 text-center text-3xl">
@@ -40,7 +40,7 @@ const Welcome = () => {
       {/* rightImage */}
       <div className="hidden">
         <img
-          src="src/assets/welcome-page/welcome-right.png"
+          src="assets/welcome-page/welcome-right.png"
           alt="happy women"
         />
       </div>
