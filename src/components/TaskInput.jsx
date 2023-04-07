@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const TaskInput = ({ handleTask }) => {
+const TaskInput = ({ addTodo }) => {
   const [focus, setFocus] = useState(false);
+  const [todoText, setTodoText] = useState("");
 
-  const hanldeFocus = () => {
-    setFocus(true);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (todoText == "") return;
+    addTodo(todoText);
+    setTodoText("");
   };
 
   return (
-    <div
-      className={`border border-gray-200 mx-3 ${
+    <form
+      onSubmit={handleSubmit}
+      className={`border border-gray-200 mx-3 rounded shadow-md ${
         !focus ? "h-12" : "h-30"
-      } rounded shadow-md mb-10`}
+      }`}
     >
-      <div className="flex items-center py-1" onClick={hanldeFocus}>
+      <div className="flex items-center py-1" onClick={() => setFocus(true)}>
         <div className="h-full w-12 flex justify-center items-center">
           {!focus ? (
             <Icon
@@ -29,8 +34,9 @@ const TaskInput = ({ handleTask }) => {
         </div>
         <div>
           <input
-            onChange={handleTask}
+            onChange={(event) => setTodoText(event.target.value)}
             type="text"
+            value={todoText}
             placeholder="Добавьте задачу"
             className="form-input placeholder:text-blue-500 border-none focus:placeholder:text-gray-300 focus:ring-transparent"
           />
@@ -42,12 +48,15 @@ const TaskInput = ({ handleTask }) => {
           <Icon icon="ion:calendar-outline" width="27" />
           <Icon icon="ion:notifications-outline" width="27" className="ml-2" />
           <Icon icon="ion:refresh-circle-outline" width="27" className="ml-2" />
-          <button className="mx-3 bg-white text-blue-500 border py-[2px] px-2 hover:bg-blue-700 hover:text-white rounded-md ">
+          <button
+            className="mx-3 bg-white text-blue-500 border py-[2px] px-2 hover:bg-blue-700 hover:text-white rounded-md "
+            type="submit"
+          >
             Добавить
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
