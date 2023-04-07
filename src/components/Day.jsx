@@ -38,7 +38,7 @@ const Day = () => {
   };
 
   return (
-    <div className="border border-red-500 overflow-hidden">
+    <div className="overflow-hidden">
       <h2 className="text-3xl my-5 font-roboto text-center text-blue-700">
         Мой день
       </h2>
