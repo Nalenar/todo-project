@@ -1,20 +1,12 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const TaskInput = ({ addTodo }) => {
+const TodoInput = (props) => {
   const [focus, setFocus] = useState(false);
-  const [todoText, setTodoText] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (todoText == "") return;
-    addTodo(todoText);
-    setTodoText("");
-  };
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={props.onFormSubmit}
       className={`border border-gray-200 mx-3 rounded shadow-md mb-2 ${
         !focus ? "h-12" : "h-30"
       }`}
@@ -32,13 +24,14 @@ const TaskInput = ({ addTodo }) => {
             <Icon icon="mdi:circle-outline" width="27" color="#3b82f6" />
           )}
         </div>
-        <div>
+        <div className="w-full">
           <input
-            onChange={(event) => setTodoText(event.target.value)}
             type="text"
-            value={todoText}
+            name="todo"
+            value={props.todo}
             placeholder="Добавьте задачу"
-            className="form-input placeholder:text-blue-500 border-none focus:placeholder:text-gray-300 focus:ring-transparent"
+            onChange={props.onInputChange}
+            className="form-input w-full placeholder:text-blue-500 border-none focus:placeholder:text-gray-300 focus:ring-transparent"
           />
         </div>
       </div>
@@ -60,4 +53,4 @@ const TaskInput = ({ addTodo }) => {
   );
 };
 
-export default TaskInput;
+export default TodoInput;

@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import HeaderButton from "./HeaderButton";
-import Menu from "./Menu";
-import Settings from './Settings'
+import Menu from "../Menu";
+import Settings from '../Settings'
 
 const Header = () => {
   const [menuButton, setMenuButton] = useState(false);
@@ -10,8 +10,6 @@ const Header = () => {
 
   const handleMenuButtonClick = () => setMenuButton(prev => !prev);
   const handleSettingsButtonClick = () => setSettingsButton(prev => !prev);
-
-  // const handleMenuLinkClick = () => handleMenuButtonClick(false)
 
   return (
     <>

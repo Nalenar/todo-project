@@ -18,7 +18,7 @@ const TodoItem = (props) => (
     </p>
     <div
       className="h-[30px] w-[30px] flex justify-center items-center cursor-pointer mx-3"
-      onClick={() => props.handleDelete(props.todo.id)}
+      onClick={() => props.onDeleteClick(props.todo.id)}
     >
       <Icon icon="ion:trash" width={27} color="#ef4444" />
     </div>
