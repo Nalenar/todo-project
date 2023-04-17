@@ -1,25 +1,21 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const HeaderButton = ({ onChange, icon }) => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleChange = (value) => {
-    onChange(value);
-  };
+const HeaderButton = (props) => {
+  // const [toggle, setToggle] = useState(false);
 
   return (
     <div
       className="cursor-pointer"
       onClick={() => {
-        setToggle((prev) => !prev);
+        // setToggle((prev) => !prev);
+        props.onButtonClick()
       }}
-      onChange={handleChange(toggle)}
     >
-      {toggle ? (
+      {props.button ? (
         <Icon icon="ion:close" color="white" width="45" />
       ) : (
-        <Icon icon={icon} color="white" width="45" />
+        <Icon icon={props.icon} color="white" width="45" />
       )}
     </div>
   );
