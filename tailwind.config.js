@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['"Raleway"', ...defaultTheme.fontFamily.sans],
+        roboto: ['"Nunito"', ...defaultTheme.fontFamily.sans],
       },
     },
   },

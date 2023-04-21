@@ -5,10 +5,11 @@ import TodoItem from "./TodoItem";
 
 const TodoList = (props) => {
   const todos = useSelector((state) => state.todos);
+  const blurStyle = useSelector((state) => state.style.blur);
 
   return (
-    <div className="overflow-y-auto">
-      <h2 className="my-5 text-center font-roboto text-3xl text-blue-500">
+    <div className={`overflow-y-auto ${blurStyle}`}>
+      <h2 className="my-5 text-center font-roboto text-3xl font-bold text-blue-500">
         {props.headerText}
       </h2>
       <TodoInput category={props.category} />
