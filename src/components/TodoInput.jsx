@@ -1,13 +1,28 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Icon } from "@iconify/react";
+
+import { addTodo } from "../redux/todoSlice";
 
 const TodoInput = (props) => {
   const [focus, setFocus] = useState(false);
+  const [value, setValue] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    if (value === "") return
+    dispatch(addTodo({title: value}))
+    setValue("")
+  }
+
+  const handleInputChange = (event) => setValue(event.target.value)
 
   return (
     <form
-      onSubmit={props.onFormSubmit}
-      className={`border border-gray-200 mx-3 rounded shadow-md mb-2 ${
+      onSubmit={handleFormSubmit}
+      className={`border border-gray-200 mx-3 rounded shadow-md mb-2 overflow-y-hidden ${
         !focus ? "h-12" : "h-30"
       }`}
     >
@@ -28,9 +43,9 @@ const TodoInput = (props) => {
           <input
             type="text"
             name="todo"
-            value={props.todo}
+            value={value}
             placeholder="Добавьте задачу"
-            onChange={props.onInputChange}
+            onChange={handleInputChange}
             className="form-input w-full placeholder:text-blue-500 border-none focus:placeholder:text-gray-300 focus:ring-transparent"
           />
         </div>

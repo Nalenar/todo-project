@@ -13,10 +13,6 @@ const Day = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const handleInputChange = (event) => {
-    setTodo(event.target.value);
-  };
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (todo === "") return;
