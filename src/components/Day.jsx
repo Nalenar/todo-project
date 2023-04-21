@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
 import TodoInput from "./TodoInput";
 import TodoItem from "./TodoItem";
 
 const Day = () => {
   const todos = useSelector(state => state.todos)
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
 
   return (
     <div className="overflow-y-auto">
