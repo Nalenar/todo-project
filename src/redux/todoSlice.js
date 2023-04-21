@@ -3,11 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const todoSlice = createSlice({
   name: "todos",
   initialState: [
-    { id: 1, title: "todo1", completed: false },
-    { id: 2, title: "todo2", completed: false },
-    { id: 3, title: "todo3", completed: true },
-    { id: 4, title: "todo4", completed: false },
-    { id: 5, title: "todo5", completed: false },
+    {
+      id: 1,
+      title: "today",
+      completed: true,
+      category: "today",
+    },
+    {
+      id: 2,
+      title: "important",
+      completed: false,
+      category: "important",
+    },
   ],
   reducers: {
     addTodo: (state, action) => {
@@ -15,6 +22,7 @@ export const todoSlice = createSlice({
         id: new Date(),
         title: action.payload.title,
         completed: false,
+        category: action.payload.category,
       };
       state.push(todo);
     },

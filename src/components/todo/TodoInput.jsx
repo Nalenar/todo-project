@@ -2,22 +2,22 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Icon } from "@iconify/react";
 
-import { addTodo } from "../redux/todoSlice";
+import { addTodo } from "../../redux/todoSlice";
 
-const TodoInput = (props) => {
+const TodoInput = ({ category }) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
 
   const dispatch = useDispatch();
 
   const handleFormSubmit = (event) => {
-    event.preventDefault()
-    if (value === "") return
-    dispatch(addTodo({title: value}))
-    setValue("")
-  }
+    event.preventDefault();
+    if (value === "") return;
+    dispatch(addTodo({ title: value, category }));
+    setValue("");
+  };
 
-  const handleInputChange = (event) => setValue(event.target.value)
+  const handleInputChange = (event) => setValue(event.target.value);
 
   return (
     <form
