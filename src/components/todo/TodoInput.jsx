@@ -22,7 +22,7 @@ const TodoInput = ({ category }) => {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className={`mx-3 mb-2 overflow-y-hidden rounded border border-gray-200 shadow-md ${
+      className={`bg-white mx-3 mb-2 overflow-y-hidden rounded border border-gray-200 shadow-md ${
         !focus ? "h-12" : "h-30"
       }`}
     >

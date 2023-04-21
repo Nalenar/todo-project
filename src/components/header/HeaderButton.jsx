@@ -8,9 +8,9 @@ const HeaderButton = (props) => (
     }}
   >
     {props.button ? (
-      <Icon icon="ion:close" color="white" width="45" />
+      <Icon icon="ion:close" color="white" width="30" />
     ) : (
-      <Icon icon={props.icon} color="white" width="45" />
+      <Icon icon={props.icon} color="white" width="30" />
     )}
   </div>
 );

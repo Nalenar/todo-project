@@ -16,7 +16,7 @@ const TodoItem = (props) => {
   };
 
   return (
-    <div className="mx-3 mt-3 flex h-12 items-center rounded border border-gray-200 shadow-md last-of-type:mb-2">
+    <div className="bg-white mx-3 mt-3 flex h-12 items-center rounded border border-gray-200 shadow-md last-of-type:mb-2">
       <div className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
         {props.todo.completed ? (
           <Icon icon="ion:checkmark-circle" width="27" color="#3b82f6" />

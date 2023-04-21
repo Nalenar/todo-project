@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex h-12 w-full items-center bg-blue-600">
+      <div className="flex h-12 w-full items-center bg-blue-500">
         {/* Menu Button */}
         <div className="ml-1 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700">
           <HeaderButton
