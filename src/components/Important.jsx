@@ -1,9 +1,5 @@
-import React from 'react'
+import TodoList from "./todo/TodoList";
 
-const Important = () => {
-  return (
-    <div>Важное</div>
-  )
-}
+const Important = () => <TodoList category="important" headerText="Важное" />
 
-export default Important
+export default Important;
