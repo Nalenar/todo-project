@@ -8,7 +8,7 @@ const TodoList = (props) => {
 
   return (
     <div className="overflow-y-auto">
-      <h2 className="text-3xl my-5 font-roboto text-center text-blue-700">
+      <h2 className="my-5 text-center font-roboto text-3xl text-blue-700">
         {props.headerText}
       </h2>
       <TodoInput category={props.category} />

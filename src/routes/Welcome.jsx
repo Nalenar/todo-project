@@ -10,11 +10,7 @@ const Welcome = () => {
 
       {/* hero */}
       <div className="flex h-full flex-col items-center justify-center">
-        <img
-          src="assets/welcome-page/logo.png"
-          alt="logo"
-          className="w-24"
-        />
+        <img src="assets/welcome-page/logo.png" alt="logo" className="w-24" />
         <div className="my-2 w-72 text-center font-roboto">
           <h1 className="mb-5 text-5xl">To Do</h1>
           <img
@@ -39,10 +35,7 @@ const Welcome = () => {
 
       {/* rightImage */}
       <div className="hidden">
-        <img
-          src="assets/welcome-page/welcome-right.png"
-          alt="happy women"
-        />
+        <img src="assets/welcome-page/welcome-right.png" alt="happy women" />
       </div>
     </main>
   );

@@ -16,7 +16,7 @@ const TodoItem = (props) => {
   };
 
   return (
-    <div className="mx-3 mt-3 h-12 flex items-center shadow-md border border-gray-200 rounded last-of-type:mb-2">
+    <div className="mx-3 mt-3 flex h-12 items-center rounded border border-gray-200 shadow-md last-of-type:mb-2">
       <div className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
         {props.todo.completed ? (
           <Icon icon="ion:checkmark-circle" width="27" color="#3b82f6" />
@@ -25,15 +25,15 @@ const TodoItem = (props) => {
         )}
       </div>
       <p
-        className={`h-full w-full flex items-center overflow-x-auto text ${
-          props.todo.completed ? "line-through text-gray-400 italic" : ""
+        className={`text flex h-full w-full items-center overflow-x-auto ${
+          props.todo.completed ? "italic text-gray-400 line-through" : ""
         }`}
       >
         {props.todo.title}
       </p>
       <div
         onClick={handleDeleteClick}
-        className="h-[30px] w-[30px] flex justify-center items-center cursor-pointer mx-3"
+        className="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
       >
         <Icon icon="ion:trash" width={27} color="#ef4444" />
       </div>

@@ -22,12 +22,12 @@ const TodoInput = ({ category }) => {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className={`border border-gray-200 mx-3 rounded shadow-md mb-2 overflow-y-hidden ${
+      className={`mx-3 mb-2 overflow-y-hidden rounded border border-gray-200 shadow-md ${
         !focus ? "h-12" : "h-30"
       }`}
     >
       <div className="flex items-center py-1" onClick={() => setFocus(true)}>
-        <div className="h-full w-12 flex justify-center items-center">
+        <div className="flex h-full w-12 items-center justify-center">
           {!focus ? (
             <Icon
               icon="ion:add-circle-outline"
@@ -46,18 +46,18 @@ const TodoInput = ({ category }) => {
             value={value}
             placeholder="Добавьте задачу"
             onChange={handleInputChange}
-            className="form-input w-full placeholder:text-blue-500 border-none focus:placeholder:text-gray-300 focus:ring-transparent"
+            className="form-input w-full border-none placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-300"
           />
         </div>
       </div>
       <div className={!focus ? "invisible" : "visible"}>
         <hr />
-        <div className="bg-gray-100 h-10 flex items-center justify-end">
+        <div className="flex h-10 items-center justify-end bg-gray-100">
           <Icon icon="ion:calendar-outline" width="27" />
           <Icon icon="ion:notifications-outline" width="27" className="ml-2" />
           <Icon icon="ion:refresh-circle-outline" width="27" className="ml-2" />
           <button
-            className="mx-3 bg-white text-blue-500 border py-[2px] px-2 hover:bg-blue-700 hover:text-white rounded-md "
+            className="mx-3 rounded-md border bg-white px-2 py-[2px] text-blue-500 hover:bg-blue-700 hover:text-white "
             type="submit"
           >
             Добавить
