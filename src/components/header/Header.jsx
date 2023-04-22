@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addBlur, deleteBlur } from "../../redux/styleSlice";
 
 import HeaderButton from "./HeaderButton";
-import Menu from "../Menu";
+import Menu from "../menu/Menu";
 import Settings from "../Settings";
 
 const Header = () => {
