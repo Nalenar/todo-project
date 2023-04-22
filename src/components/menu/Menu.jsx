@@ -7,7 +7,7 @@ const Menu = (props) => {
   return (
     <div className="fixed left-0 top-12 z-[1] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
       <Link
-        to="/app"
+        to="/app/"
         className="mx-1 flex items-center pl-3 hover:bg-gray-100"
         onClick={() => props.onLinkClick(false)}
       >

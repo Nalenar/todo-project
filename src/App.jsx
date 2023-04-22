@@ -5,7 +5,11 @@ import Welcome from "./routes/Welcome";
 import TodoApp from "./routes/TodoApp";
 import TodoList from "./components/todo/TodoList";
 
+import { useSelector } from "react-redux";
+
 const App = () => {
+  const lists = useSelector((state) => state.lists);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -20,6 +24,14 @@ const App = () => {
               path="/app/important"
               element={<TodoList category="important" headerText="Важное" />}
             />
+            {lists.map((list) => (
+              <Route
+                path={`/app/${list.id}`}
+                element={
+                  <TodoList category={list.id} headerText={list.title} />
+                }
+              />
+            ))}
           </Route>
         </Route>
       </Routes>

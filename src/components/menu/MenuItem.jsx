@@ -14,7 +14,7 @@ const MenuItem = (props) => {
   return (
     <div className="mx-1 flex items-center justify-between hover:bg-gray-100">
       <Link
-        to={`/app/:${props.id}`}
+        to={`/app/${props.id}`}
         className="mx-1 pl-3"
         onClick={props.onLinkClick}
       >
