@@ -3,7 +3,9 @@ import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
 import { addCategory, deleteCategory } from "../../redux/listSlice";
 
-const MenuList = () => {
+import MenuItem from "./MenuItem";
+
+const MenuList = (props) => {
   const lists = useSelector((state) => state.lists);
   const dispatch = useDispatch();
 
@@ -17,6 +19,15 @@ const MenuList = () => {
 
   return (
     <>
+      {lists.map((list) => (
+        <MenuItem
+          key={list.id}
+          title={list.title}
+          id={list.id}
+          onLinkClick={props.onLinkClick}
+        />
+      ))}
+
       <form onSubmit={handleFormSubmit}>
         <div className="flex w-full justify-center">
           <button type="submit" className="ml-2 mr-1 pl-1">
