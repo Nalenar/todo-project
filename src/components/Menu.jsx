@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
+import MenuList from "./menu/MenuList";
+
 const Menu = (props) => {
   return (
-    <div className="fixed left-0 top-12 z-[1] h-full w-[214px] cursor-pointer overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
+    <div className="fixed left-0 top-12 z-[1] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
       <Link
         to="/app"
         className="flex items-center pl-3 hover:bg-gray-100"
@@ -27,23 +29,7 @@ const Menu = (props) => {
 
       <hr className="border-1 mx-4 my-2 border-gray-300" />
 
-      <form>
-        <div className="flex w-full justify-center">
-          <button type="submit" className="ml-2 mr-1 pl-1">
-            <Icon
-              icon="ion:add-circle-outline"
-              width={25}
-              color="#3b82f6"
-              className="cursor-pointer"
-            />
-          </button>
-          <input
-            type="text"
-            placeholder="Новая категория"
-            className="form-input mr-1 h-10 w-full border-none pl-0 text-lg placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-500"
-          />
-        </div>
-      </form>
+      <MenuList />
     </div>
   );
 };

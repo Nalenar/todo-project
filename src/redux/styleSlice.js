@@ -6,7 +6,7 @@ export const styleSlice = createSlice({
     blur: "",
   },
   reducers: {
-    AddBlur: (state) => {
+    addBlur: (state) => {
       state.blur = "blur-sm";
     },
     deleteBlur: (state) => {
@@ -15,5 +15,5 @@ export const styleSlice = createSlice({
   },
 });
 
-export const { AddBlur, deleteBlur } = styleSlice.actions;
+export const { addBlur, deleteBlur } = styleSlice.actions;
 export default styleSlice.reducer;

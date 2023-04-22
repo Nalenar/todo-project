@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { AddBlur, deleteBlur } from "../../redux/styleSlice";
+import { addBlur, deleteBlur } from "../../redux/styleSlice";
 
 import HeaderButton from "./HeaderButton";
 import Menu from "../Menu";
@@ -15,7 +15,7 @@ const Header = () => {
   const handleMenuButtonClick = () => {
     setMenuButton((prev) => !prev);
     if (!menuButton) {
-      dispatch(AddBlur());
+      dispatch(addBlur());
     } else {
       dispatch(deleteBlur());
     }
