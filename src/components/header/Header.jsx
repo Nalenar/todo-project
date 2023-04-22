@@ -1,15 +1,33 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { addBlur, deleteBlur } from "../../redux/styleSlice";
 
 import HeaderButton from "./HeaderButton";
-import Menu from "../Menu";
+import Menu from "../menu/Menu";
 import Settings from "../Settings";
 
 const Header = () => {
   const [menuButton, setMenuButton] = useState(false);
   const [settingsButton, setSettingsButton] = useState(false);
+  const dispatch = useDispatch();
 
-  const handleMenuButtonClick = () => setMenuButton((prev) => !prev);
-  const handleSettingsButtonClick = () => setSettingsButton((prev) => !prev);
+  const handleMenuButtonClick = () => {
+    setMenuButton((prev) => !prev);
+    if (!menuButton) {
+      dispatch(addBlur());
+    } else {
+      dispatch(deleteBlur());
+    }
+  };
+  const handleSettingsButtonClick = () => {
+    setSettingsButton((prev) => !prev);
+    if (!settingsButton) {
+      dispatch(AddBlur());
+    } else {
+      dispatch(deleteBlur());
+    }
+  };
 
   return (
     <>
@@ -23,7 +41,9 @@ const Header = () => {
           />
         </div>
 
-        <h1 className="ml-5 font-roboto text-4xl font-bold text-white">ToDo</h1>
+        <h1 className="ml-5 font-roboto text-4xl font-bold text-white">
+          DayUp
+        </h1>
 
         {/* Settings Button */}
         <div className="ml-5 flex h-11 w-full justify-end">

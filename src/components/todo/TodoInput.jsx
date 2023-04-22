@@ -22,7 +22,7 @@ const TodoInput = ({ category }) => {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className={`bg-white mx-3 mb-2 overflow-y-hidden rounded border border-gray-200 shadow-md ${
+      className={`mx-3 mb-2 overflow-y-hidden rounded border border-gray-200 bg-white shadow-md ${
         !focus ? "h-12" : "h-30"
       }`}
     >
@@ -46,7 +46,7 @@ const TodoInput = ({ category }) => {
             value={value}
             placeholder="Добавьте задачу"
             onChange={handleInputChange}
-            className="form-input w-full border-none placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-300"
+            className="form-input w-full border-none font-roboto placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-300"
           />
         </div>
       </div>
@@ -57,7 +57,7 @@ const TodoInput = ({ category }) => {
           <Icon icon="ion:notifications-outline" width="27" className="ml-2" />
           <Icon icon="ion:refresh-circle-outline" width="27" className="ml-2" />
           <button
-            className="mx-3 rounded-md border bg-white px-2 py-[2px] text-blue-500 hover:bg-blue-700 hover:text-white "
+            className="mx-3 rounded-md border bg-white px-2 py-[2px] font-roboto text-blue-500 hover:bg-blue-700 hover:text-white "
             type="submit"
           >
             Добавить
