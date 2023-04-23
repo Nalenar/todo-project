@@ -26,6 +26,7 @@ const App = () => {
             />
             {lists.map((list) => (
               <Route
+                key={list.id}
                 path={`/app/${list.id}`}
                 element={
                   <TodoList category={list.id} headerText={list.title} />
