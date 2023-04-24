@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 import { addTodo } from "../../redux/todoSlice";
 
-const TodoInput = ({ category }) => {
+const TodoAddForm = ({ category }) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
 
@@ -68,4 +68,4 @@ const TodoInput = ({ category }) => {
   );
 };
 
-export default TodoInput;
+export default TodoAddForm;

@@ -1,30 +1,34 @@
 import { useSelector } from "react-redux";
-import { Icon } from "@iconify/react";
 
-import TodoInput from "./TodoInput";
+import TodoAddForm from "./TodoAddForm";
 import TodoItem from "./TodoItem";
+import EditListForm from "./EditListForm";
+import Dropdown from "../common/Dropdown";
+import Modal from "../common/Modal";
 
 const TodoList = (props) => {
   const todos = useSelector((state) => state.todos);
-  const blur = useSelector((state) => state.style.blur);
+  const blur = useSelector((state) => state.style.styles.blur);
+  const editList = useSelector((state) => state.style.windows.editList);
 
   return (
-    <div id="main" className={`overflow-y-auto ${blur}`}>
-      <div className="flex items-center justify-center">
-        <h2 className="my-5 mr-4 text-center font-roboto text-3xl font-bold text-blue-800">
-          {props.headerText}
-        </h2>
-        <button className="mr-2 flex items-center justify-center rounded-full border bg-white p-1 shadow-md hover:bg-gray-100">
-          <Icon
-            icon="solar:menu-dots-bold"
-            className=""
-            width={30}
-            color="#1E40AF"
-          />
-        </button>
+    <div className={`overflow-y-auto ${blur}`}>
+      <div className="flex h-[100px] items-center justify-center">
+        {editList ? (
+          <EditListForm id={props.category} title={props.headerText} />
+        ) : (
+          <>
+            <h2 className="mr-4 text-center font-roboto text-3xl font-bold text-blue-800">
+              {props.headerText}
+            </h2>
+            {props.list_edit ? <Dropdown /> : <></>}
+          </>
+        )}
       </div>
 
-      <TodoInput category={props.category} />
+      <TodoAddForm category={props.category} />
+
+      <Modal id={props.category} />
 
       {todos
         .filter((todo) => todo.category === props.category)

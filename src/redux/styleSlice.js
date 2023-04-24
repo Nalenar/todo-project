@@ -1,19 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const styleSlice = createSlice({
-  name: "blur",
+  name: "style",
   initialState: {
-    blur: "",
+    styles: {
+      blur: "",
+    },
+    windows: {
+      menu: false,
+      settings: false,
+      modal: false,
+      editList: false,
+    },
   },
   reducers: {
-    addBlur: (state) => {
-      state.blur = "blur-sm";
+    toggleStyles: (state, action) => {
+      state.styles[action.payload.style] = action.payload.string;
     },
-    deleteBlur: (state) => {
-      state.blur = "";
+    toggleWindows: (state, action) => {
+      if (action.payload.window === "menu" && action.payload.toggle) {
+        state.windows.menu = true;
+        state.windows.settings = false;
+      } else if (
+        action.payload.window === "settings" &&
+        action.payload.toggle
+      ) {
+        state.windows.settings = true;
+        state.windows.menu = false;
+      } else {
+        state.windows[action.payload.window] = action.payload.toggle;
+      }
     },
   },
 });
 
-export const { addBlur, deleteBlur } = styleSlice.actions;
+export const { toggleStyles, toggleWindows } = styleSlice.actions;
 export default styleSlice.reducer;
