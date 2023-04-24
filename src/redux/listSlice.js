@@ -19,8 +19,13 @@ export const listSlice = createSlice({
     deleteCategory: (state, action) => {
       return state.filter((list) => list.id !== action.payload.id);
     },
+    renameCategory: (state, action) => {
+      const index = state.findIndex((list) => list.id === action.payload.id);
+      state[index].title = action.payload.title;
+    },
   },
 });
 
-export const { addCategory, deleteCategory } = listSlice.actions;
+export const { addCategory, deleteCategory, renameCategory } =
+  listSlice.actions;
 export default listSlice.reducer;
