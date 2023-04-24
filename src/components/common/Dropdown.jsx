@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteCategory } from "../../redux/listSlice";
+import { Icon } from "@iconify/react";
 
-const Dropdown = ({ id }) => {
+import { toggleWindows } from "../../redux/styleSlice";
+
+const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const handleDeleteClick = () => {
-    dispatch(deleteCategory({ id }));
+  const handleDeleteButtonClick = () => {
+    dispatch(toggleWindows({ window: "modal", toggle: true }));
   };
 
   return (
@@ -22,9 +22,9 @@ const Dropdown = ({ id }) => {
       </button>
 
       <div
-        className={`${
+        className={`h-[82px] w-36 rounded-md border border-blue-400 bg-white shadow-md ${
           isOpen ? "visible" : "hidden"
-        } h-[82px] w-36 rounded-md border border-blue-400 bg-white shadow-md`}
+        }`}
       >
         <button className="flex w-full items-center justify-center rounded-t-md pb-1 pt-2 text-gray-600 hover:bg-gray-100">
           <Icon icon="material-symbols:edit" width={27} />
@@ -32,15 +32,11 @@ const Dropdown = ({ id }) => {
         </button>
         <hr />
         <button
-          className="w-full rounded-b-md pb-1.5 pt-1 hover:bg-gray-100"
-          onClick={handleDeleteClick}
+          className="flex w-full items-center justify-center rounded-b-md pb-1.5 pt-1 hover:bg-gray-100"
+          onClick={handleDeleteButtonClick}
         >
-          <Link to="/app/" className="flex items-center justify-center">
-            <Icon icon="ion:trash" width={27} color="#ef4444" />
-            <span className="ml-1 font-roboto text-xl text-red-500">
-              Delete
-            </span>
-          </Link>
+          <Icon icon="ion:trash" width={27} color="#ef4444" />
+          <span className="ml-1 font-roboto text-xl text-red-500">Delete</span>
         </button>
       </div>
     </>

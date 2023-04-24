@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
-import { addCategory, deleteCategory } from "../../redux/listSlice";
+
+import { addCategory } from "../../redux/listSlice";
 
 import MenuItem from "./MenuItem";
 
@@ -13,6 +14,7 @@ const MenuList = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    if (value === "") return;
     dispatch(addCategory({ title: value }));
     setValue("");
   };
@@ -22,8 +24,8 @@ const MenuList = (props) => {
       {lists.map((list) => (
         <MenuItem
           key={list.id}
-          title={list.title}
           id={list.id}
+          title={list.title}
           onLinkClick={props.onLinkClick}
         />
       ))}
@@ -32,7 +34,7 @@ const MenuList = (props) => {
         <div className="flex w-full justify-center">
           <button type="submit" className="ml-2 mr-1 pl-1">
             <Icon
-              icon="ion:add-circle-outline"
+              icon="line-md:plus-circle"
               width={25}
               color="#3b82f6"
               className="cursor-pointer"
