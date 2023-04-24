@@ -17,16 +17,13 @@ const HeaderButton = ({ icon, buttonName, buttonState }) => {
   };
 
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => handleButtonClick(buttonName, buttonState)}
-    >
+    <button onClick={() => handleButtonClick(buttonName, buttonState)}>
       {buttonState ? (
         <Icon icon="ion:close" color="white" width="30" />
       ) : (
         <Icon icon={icon} color="white" width="30" />
       )}
-    </div>
+    </button>
   );
 };
 

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import { ClickAwayListener } from "@mui/base";
 import { useDispatch } from "react-redux";
 
 import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
@@ -15,9 +14,14 @@ const Menu = ({ onClickAway }) => {
     dispatch(toggleStyles({ style: "blur", string: "" }));
   };
 
+  const handleClickAway = () => {
+    dispatch(toggleWindows({ window: "menu", toggle: false }));
+    dispatch(toggleStyles({ style: "blur", string: "" }));
+  };
+
   return (
-    <ClickAwayListener onClickAway={onClickAway}>
-      <div className="fixed left-0 top-12 z-[1] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
+    <>
+      <div className="fixed left-0 top-12 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
         <Link
           to="/app/"
           className="mx-1 flex items-center pl-3 hover:bg-gray-100"
@@ -43,7 +47,13 @@ const Menu = ({ onClickAway }) => {
 
         <MenuList onLinkClick={handleLinkClick} />
       </div>
-    </ClickAwayListener>
+
+      {/* handles click away */}
+      <div
+        onClick={handleClickAway}
+        className="fixed z-[1] h-full w-full bg-transparent"
+      ></div>
+    </>
   );
 };
 export default Menu;
