@@ -10,6 +10,7 @@ export const styleSlice = createSlice({
       menu: false,
       settings: false,
       modal: false,
+      editList: false,
     },
   },
   reducers: {
@@ -18,14 +19,14 @@ export const styleSlice = createSlice({
     },
     toggleWindows: (state, action) => {
       if (action.payload.window === "menu" && action.payload.toggle) {
-        state.windows["menu"] = true;
-        state.windows["settings"] = false;
+        state.windows.menu = true;
+        state.windows.settings = false;
       } else if (
         action.payload.window === "settings" &&
         action.payload.toggle
       ) {
-        state.windows["settings"] = true;
-        state.windows["menu"] = false;
+        state.windows.settings = true;
+        state.windows.menu = false;
       } else {
         state.windows[action.payload.window] = action.payload.toggle;
       }

@@ -12,6 +12,10 @@ const Dropdown = () => {
     dispatch(toggleWindows({ window: "modal", toggle: true }));
   };
 
+  const handleEditButtonClick = () => {
+    dispatch(toggleWindows({ window: "editList", toggle: true}))
+  }
+
   return (
     <>
       <button
@@ -26,7 +30,7 @@ const Dropdown = () => {
           isOpen ? "visible" : "hidden"
         }`}
       >
-        <button className="flex w-full items-center justify-center rounded-t-md pb-1 pt-2 text-gray-600 hover:bg-gray-100">
+        <button className="flex w-full items-center justify-center rounded-t-md pb-1 pt-2 text-gray-600 hover:bg-gray-100" onClick={handleEditButtonClick}>
           <Icon icon="material-symbols:edit" width={27} />
           <span className="ml-1 font-roboto text-xl">Edit</span>
         </button>
