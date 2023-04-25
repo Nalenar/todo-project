@@ -6,10 +6,12 @@ import { toggleWindows, toggleStyles } from "../redux/styleSlice";
 import Header from "../components/header/Header";
 import Menu from "../components/menu/Menu";
 import Settings from "../components/settings/Settings";
+import EditTodo from "../components/todo/EditTodo";
 
 const TodoApp = () => {
-  const menu = useSelector((state) => state.style.windows["menu"]);
-  const settings = useSelector((state) => state.style.windows["settings"]);
+  const menu = useSelector((state) => state.style.windows.menu);
+  const settings = useSelector((state) => state.style.windows.settings);
+  const editTodo = useSelector((state) => state.style.windows.editTodo);
   const dispatch = useDispatch();
 
   const handleClickAway = () => {
@@ -21,6 +23,8 @@ const TodoApp = () => {
   return (
     <>
       <Header menu={menu} settings={settings} />
+
+      <EditTodo />
 
       {!menu ? <></> : <Menu onClickAway={handleClickAway} />}
 

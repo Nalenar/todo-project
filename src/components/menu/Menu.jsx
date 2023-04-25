@@ -21,7 +21,7 @@ const Menu = ({ onClickAway }) => {
 
   return (
     <>
-      <div className="fixed left-0 top-12 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
+      <div className="fixed left-0 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
         <Link
           to="/app/"
           className="mx-1 flex items-center pl-3 hover:bg-gray-100"

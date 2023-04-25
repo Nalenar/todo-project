@@ -5,6 +5,7 @@ import TodoItem from "./TodoItem";
 import EditListForm from "./EditListForm";
 import Dropdown from "../common/Dropdown";
 import Modal from "../common/Modal";
+import EditTodo from "./EditTodo";
 
 const TodoList = (props) => {
   const todos = useSelector((state) => state.todos);

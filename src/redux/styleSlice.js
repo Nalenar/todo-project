@@ -11,6 +11,7 @@ export const styleSlice = createSlice({
       settings: false,
       modal: false,
       editList: false,
+      editTodo: false,
     },
   },
   reducers: {
