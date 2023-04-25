@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
+import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 import MenuList from "./MenuList";
 

@@ -1,17 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../redux/styleSlice";
+import { toggleWindows, toggleStyles } from "../redux/commonSlice";
 
 import Header from "../components/header/Header";
 import Menu from "../components/menu/Menu";
 import Settings from "../components/settings/Settings";
-import EditTodo from "../components/todo/EditTodo";
+import EditTodo from "../components/todo/edit/EditTodo";
 
 const TodoApp = () => {
   const menu = useSelector((state) => state.style.windows.menu);
   const settings = useSelector((state) => state.style.windows.settings);
-  const editTodo = useSelector((state) => state.style.windows.editTodo);
   const dispatch = useDispatch();
 
   const handleClickAway = () => {

@@ -2,10 +2,9 @@ import { useSelector } from "react-redux";
 
 import TodoAddForm from "./TodoAddForm";
 import TodoItem from "./TodoItem";
-import EditListForm from "./EditListForm";
 import Dropdown from "../common/Dropdown";
 import Modal from "../common/Modal";
-import EditTodo from "./EditTodo";
+import EditListForm from "./edit/EditListForm";
 
 const TodoList = (props) => {
   const todos = useSelector((state) => state.todos);
@@ -32,7 +31,7 @@ const TodoList = (props) => {
       <Modal id={props.category} />
 
       {todos
-        .filter((todo) => todo.category === props.category)
+        .filter((todo) => todo.category.includes(props.category))
         .map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}

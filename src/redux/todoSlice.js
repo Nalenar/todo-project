@@ -7,13 +7,13 @@ export const todoSlice = createSlice({
       id: 1,
       title: "today",
       completed: true,
-      category: "today",
+      category: ["today"],
     },
     {
       id: 2,
       title: "important",
-      completed: false,
-      category: "important",
+      completed: true,
+      category: ["today", "important"],
     },
   ],
   reducers: {

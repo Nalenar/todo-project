@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
+import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 const Settings = () => {
   const dispatch = useDispatch();

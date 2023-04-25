@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { toggleWindows } from "../../redux/styleSlice";
+import { toggleWindows } from "../../redux/commonSlice";
 import { deleteCategory } from "../../redux/listSlice";
 
 const Modal = ({ id }) => {

@@ -2,19 +2,18 @@ import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
 import { toggleComplete } from "../../redux/todoSlice";
-import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
+import { toggleWindows, editTodo } from "../../redux/commonSlice";
 
-const TodoItem = (props) => {
+const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
   const handleCompleteClick = () => {
-    dispatch(
-      toggleComplete({ id: props.todo.id, completed: !props.todo.completed })
-    );
+    dispatch(toggleComplete({ id: todo.id, completed: !todo.completed }));
   };
 
   const handleTodoClick = () => {
     dispatch(toggleWindows({ window: "editTodo", toggle: true }));
+    dispatch(editTodo(todo));
   };
 
   return (
@@ -23,7 +22,7 @@ const TodoItem = (props) => {
       onClick={handleTodoClick}
     >
       <div className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
-        {props.todo.completed ? (
+        {todo.completed ? (
           <Icon icon="ion:checkmark-circle" width="27" color="#3b82f6" />
         ) : (
           <Icon icon="mdi:circle-outline" width="27" color="#3b82f6" />
@@ -31,10 +30,10 @@ const TodoItem = (props) => {
       </div>
       <p
         className={`flex h-full w-full items-center overflow-x-auto ${
-          props.todo.completed ? "italic text-gray-400 line-through" : ""
+          todo.completed ? "italic text-gray-400 line-through" : ""
         }`}
       >
-        {props.todo.title}
+        {todo.title}
       </p>
       {/* <div
         onClick={handleDeleteClick}
