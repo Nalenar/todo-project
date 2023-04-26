@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
+import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 import MenuList from "./MenuList";
 
-const Menu = ({ onClickAway }) => {
+const Menu = () => {
   const dispatch = useDispatch();
 
   const handleLinkClick = () => {
@@ -21,7 +21,7 @@ const Menu = ({ onClickAway }) => {
 
   return (
     <>
-      <div className="fixed left-0 top-12 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
+      <div className="fixed left-0 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
         <Link
           to="/app/"
           className="mx-1 flex items-center pl-3 hover:bg-gray-100"
@@ -40,6 +40,16 @@ const Menu = ({ onClickAway }) => {
           <Icon icon="line-md:star-alt" width={23} color="#818181" />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040]">
             Важное
+          </span>
+        </Link>
+        <Link
+          className="mx-1 flex items-center pl-3 hover:bg-gray-100"
+          to="/app/tasks"
+          onClick={handleLinkClick}
+        >
+          <Icon icon="line-md:home-md" width={23} color="#818181" />
+          <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040]">
+            Задачи
           </span>
         </Link>
 

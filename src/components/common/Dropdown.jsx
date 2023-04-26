@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Icon } from "@iconify/react";
 
-import { toggleWindows } from "../../redux/styleSlice";
+import { toggleWindows } from "../../redux/commonSlice";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);

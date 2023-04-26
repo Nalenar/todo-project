@@ -1,19 +1,13 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleComplete, toggleList } from "../../redux/todoSlice";
-import { toggleWindows, editTodo } from "../../redux/commonSlice";
+import { toggleComplete, toggleList } from "../../../../redux/todoSlice";
 
-const TodoItem = ({ todo }) => {
+const EditTodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
   const handleCompleteClick = () => {
     dispatch(toggleComplete({ id: todo.id, completed: !todo.completed }));
-  };
-
-  const handleTodoClick = () => {
-    dispatch(toggleWindows({ window: "editTodo", toggle: true }));
-    dispatch(editTodo({ id: todo.id }));
   };
 
   const handleImportantClick = () => {
@@ -27,8 +21,8 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <div className="mx-3 mt-3 flex h-12 cursor-pointer items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
-      <div className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
+    <div className="mt-3 flex h-12 items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
+      <button className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
         {todo.completed ? (
           <Icon
             icon="line-md:circle-to-confirm-circle-transition"
@@ -38,9 +32,8 @@ const TodoItem = ({ todo }) => {
         ) : (
           <Icon icon="line-md:circle" width="27" color="#3b82f6" />
         )}
-      </div>
+      </button>
       <p
-        onClick={handleTodoClick}
         className={`flex h-full w-full items-center overflow-x-auto ${
           todo.completed ? "italic text-gray-400 line-through" : ""
         }`}
@@ -61,4 +54,4 @@ const TodoItem = ({ todo }) => {
   );
 };
 
-export default TodoItem;
+export default EditTodoItem;

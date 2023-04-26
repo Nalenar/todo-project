@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../../redux/styleSlice";
+import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 const HeaderButton = ({ icon, buttonName, buttonState }) => {
   const dispatch = useDispatch();
