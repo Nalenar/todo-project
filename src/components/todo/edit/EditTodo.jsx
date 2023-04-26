@@ -4,6 +4,7 @@ import { toggleWindows } from "../../../redux/commonSlice";
 
 import EditTodoFooter from "./components/EditTodoFooter";
 import EditTodoItem from "./components/EditTodoItem";
+import AddToToday from "./components/AddToToday";
 
 const EditTodo = () => {
   const todos = useSelector((state) => state.todos);
@@ -22,7 +23,10 @@ const EditTodo = () => {
           {todos
             .filter((todo) => todo.id === edit.id)
             .map((todo) => (
-              <EditTodoItem key={todo.id} todo={todo} />
+              <>
+                <EditTodoItem key={todo.id + "_EditTodoItem"} todo={todo} />
+                <AddToToday key={todo.id + "_AddToToday"} todo={todo} />
+              </>
             ))}
         </div>
 

@@ -33,19 +33,19 @@ export const todoSlice = createSlice({
     deleteTodo: (state, action) => {
       return state.filter((todo) => todo.id !== action.payload.id);
     },
-    toggleImportant: (state, action) => {
+    toggleList: (state, action) => {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
-      if (action.payload.important) {
-        state[index].list.push("important");
+      if (action.payload.toggle) {
+        state[index].list.push(`${action.payload.list}`);
       } else {
         state[index].list = state[index].list.filter(
-          (list) => list !== "important"
+          (list) => list !== action.payload.list
         );
       }
     },
   },
 });
 
-export const { addTodo, toggleComplete, deleteTodo, toggleImportant } =
+export const { addTodo, toggleComplete, deleteTodo, toggleList } =
   todoSlice.actions;
 export default todoSlice.reducer;

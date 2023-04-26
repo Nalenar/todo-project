@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleComplete, toggleImportant } from "../../../../redux/todoSlice";
+import { toggleComplete, toggleList } from "../../../../redux/todoSlice";
 
 const EditTodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -12,15 +12,16 @@ const EditTodoItem = ({ todo }) => {
 
   const handleImportantClick = () => {
     dispatch(
-      toggleImportant({
+      toggleList({
         id: todo.id,
-        important: !todo.list.includes("important"),
+        list: "important",
+        toggle: !todo.list.includes("important"),
       })
     );
   };
 
   return (
-    <div className="mx-3 mt-3 flex h-12 items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
+    <div className="mt-3 flex h-12 items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
       <button className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
         {todo.completed ? (
           <Icon

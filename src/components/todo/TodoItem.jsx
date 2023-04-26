@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
-import { toggleComplete, toggleImportant } from "../../redux/todoSlice";
+import { toggleComplete, toggleList } from "../../redux/todoSlice";
 import { toggleWindows, editTodo } from "../../redux/commonSlice";
 
 const TodoItem = ({ todo }) => {
@@ -18,9 +18,10 @@ const TodoItem = ({ todo }) => {
 
   const handleImportantClick = () => {
     dispatch(
-      toggleImportant({
+      toggleList({
         id: todo.id,
-        important: !todo.list.includes("important"),
+        list: "important",
+        toggle: !todo.list.includes("important"),
       })
     );
   };
