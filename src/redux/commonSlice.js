@@ -13,7 +13,9 @@ export const commonSlice = createSlice({
       editList: false,
       editTodo: false,
     },
-    edit: {},
+    edit: {
+      id: undefined,
+    },
   },
   reducers: {
     toggleStyles: (state, action) => {
@@ -23,7 +25,7 @@ export const commonSlice = createSlice({
       state.windows[action.payload.window] = action.payload.toggle;
     },
     editTodo: (state, action) => {
-      state.edit = action.payload;
+      state.edit.id = action.payload.id;
     },
   },
 });

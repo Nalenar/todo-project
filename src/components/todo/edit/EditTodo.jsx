@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleWindows } from "../../../redux/commonSlice";
 
 import EditTodoFooter from "./components/EditTodoFooter";
+import EditTodoItem from "./components/EditTodoItem";
 
 const EditTodo = () => {
+  const todos = useSelector((state) => state.todos);
   const editTodo = useSelector((state) => state.style.windows.editTodo);
-  const todo = useSelector((state) => state.style.edit);
+  const edit = useSelector((state) => state.style.edit);
   const dispatch = useDispatch();
 
   return (
@@ -17,10 +19,14 @@ const EditTodo = () => {
         }`}
       >
         <div className="h-[85%] w-full overflow-y-auto">
-          <div className="bg-white">{todo.title}</div>
+          {todos
+            .filter((todo) => todo.id === edit.id)
+            .map((todo) => (
+              <EditTodoItem key={todo.id} todo={todo} />
+            ))}
         </div>
 
-        <EditTodoFooter todo={todo} />
+        <EditTodoFooter todo={edit} />
       </div>
 
       {/* handle click away */}
