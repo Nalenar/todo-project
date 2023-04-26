@@ -25,9 +25,9 @@ const TodoApp = () => {
 
       <EditTodo />
 
-      {!menu ? <></> : <Menu onClickAway={handleClickAway} />}
+      {!menu ? <></> : <Menu />}
 
-      {!settings ? <></> : <Settings onClickAway={handleClickAway} />}
+      {!settings ? <></> : <Settings />}
 
       <Outlet />
     </>

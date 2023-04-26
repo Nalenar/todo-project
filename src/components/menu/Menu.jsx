@@ -6,7 +6,7 @@ import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 import MenuList from "./MenuList";
 
-const Menu = ({ onClickAway }) => {
+const Menu = () => {
   const dispatch = useDispatch();
 
   const handleLinkClick = () => {
