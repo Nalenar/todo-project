@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 import { addTodo } from "../../redux/todoSlice";
 
-const TodoAddForm = ({ category }) => {
+const TodoAddForm = ({ id }) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
 
@@ -13,7 +13,7 @@ const TodoAddForm = ({ category }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (value === "") return;
-    dispatch(addTodo({ title: value, category }));
+    dispatch(addTodo({ title: value, list: id }));
     setValue("");
   };
 

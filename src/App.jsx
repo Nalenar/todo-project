@@ -19,9 +19,9 @@ const App = () => {
               path="/app/"
               element={
                 <TodoList
-                  category="today"
-                  headerText="Мой день"
-                  list_edit={false}
+                  listId="today"
+                  listTitle="Мой день"
+                  listEdit={false}
                 />
               }
             />
@@ -29,9 +29,9 @@ const App = () => {
               path="/app/important"
               element={
                 <TodoList
-                  category="important"
-                  headerText="Важное"
-                  list_edit={false}
+                  listId="important"
+                  listTitle="Важное"
+                  listEdit={false}
                 />
               }
             />
@@ -41,9 +41,9 @@ const App = () => {
                 path={`/app/${list.id}`}
                 element={
                   <TodoList
-                    category={list.id}
-                    headerText={list.title}
-                    list_edit={true}
+                    listId={list.id}
+                    listTitle={list.title}
+                    listEdit={true}
                   />
                 }
               />

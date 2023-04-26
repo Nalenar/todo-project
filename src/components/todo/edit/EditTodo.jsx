@@ -1,8 +1,6 @@
-import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { toggleWindows, toggleStyles } from "../../../redux/commonSlice";
-import { deleteTodo } from "../../../redux/todoSlice";
+import { toggleWindows } from "../../../redux/commonSlice";
 
 import EditTodoFooter from "./components/EditTodoFooter";
 
@@ -11,10 +9,6 @@ const EditTodo = () => {
   const todo = useSelector((state) => state.style.edit);
   const dispatch = useDispatch();
 
-  const handleClickAway = () => {
-    dispatch(toggleWindows({ window: "editTodo", toggle: false }));
-  };
-
   return (
     <>
       <div
@@ -22,8 +16,8 @@ const EditTodo = () => {
           editTodo ? "right-0" : "-right-full"
         }`}
       >
-        <div className="h-[85%] w-full overflow-y-auto bg-white">
-          {todo.title}
+        <div className="h-[85%] w-full overflow-y-auto">
+          <div className="bg-white">{todo.title}</div>
         </div>
 
         <EditTodoFooter todo={todo} />
@@ -34,7 +28,9 @@ const EditTodo = () => {
         className={`fixed z-[1] h-full w-full bg-transparent transition-all duration-0 ${
           editTodo ? "right-0" : "-right-full"
         }`}
-        onClick={handleClickAway}
+        onClick={() =>
+          dispatch(toggleWindows({ window: "editTodo", toggle: false }))
+        }
       ></div>
     </>
   );
