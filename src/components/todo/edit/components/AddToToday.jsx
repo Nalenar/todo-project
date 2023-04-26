@@ -20,7 +20,10 @@ const AddToToday = ({ todo }) => {
     <div className="mt-5 flex h-16 w-full items-center justify-center rounded border border-gray-200 bg-white px-4 shadow-md hover:bg-gray-100">
       {!todo.list.includes("today") ? (
         <>
-          <Icon icon="line-md:sunny-outline" width={35} color="#818181" />
+          <Icon
+            icon="line-md:sunny-outline"
+            className="text-2xl text-[#818181] lg:text-4xl"
+          />
           <p
             className="mx-4 cursor-pointer text-center font-medium text-[#818181]"
             onClick={handleAddClick}
@@ -30,7 +33,10 @@ const AddToToday = ({ todo }) => {
         </>
       ) : (
         <>
-          <Icon icon="line-md:sunny-outline" width={35} color="#3B82F6" />
+          <Icon
+            icon="line-md:sunny-outline"
+            className="text-2xl text-blue-500 lg:text-4xl"
+          />
           <p className="mx-4 cursor-default text-center font-medium text-blue-500">
             Убрать из списка "Мой день"
           </p>
