@@ -42,6 +42,16 @@ const Menu = ({ onClickAway }) => {
             Важное
           </span>
         </Link>
+        <Link
+          className="mx-1 flex items-center pl-3 hover:bg-gray-100"
+          to="/app/tasks"
+          onClick={handleLinkClick}
+        >
+          <Icon icon="line-md:home-md" width={23} color="#818181" />
+          <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040]">
+            Задачи
+          </span>
+        </Link>
 
         <hr className="border-1 mx-4 my-2 border-gray-300" />
 

@@ -35,6 +35,12 @@ const App = () => {
                 />
               }
             />
+            <Route
+              path="/app/tasks"
+              element={
+                <TodoList listId="tasks" listTitle="Задачи" listEdit={false} />
+              }
+            />
             {lists.map((list) => (
               <Route
                 key={list.id}

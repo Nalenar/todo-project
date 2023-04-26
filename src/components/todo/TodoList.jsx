@@ -30,11 +30,11 @@ const TodoList = ({ listId, listTitle, listEdit }) => {
 
       <Modal id={listId} />
 
-      {todos
-        .filter((todo) => todo.list.includes(listId))
-        .map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
-        ))}
+      {listId === "tasks"
+        ? todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+        : todos
+            .filter((todo) => todo.list.includes(listId))
+            .map((todo) => <TodoItem key={todo.id} todo={todo} />)}
     </div>
   );
 };

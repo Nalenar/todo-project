@@ -18,21 +18,24 @@ const AddToToday = ({ todo }) => {
 
   return (
     <div className="mt-5 flex h-16 w-full items-center justify-center rounded border border-gray-200 bg-white px-4 shadow-md hover:bg-gray-100">
-      <Icon icon="line-md:sunny-outline" width={35} color="#818181" />
       {!todo.list.includes("today") ? (
-        <p
-          className="mx-4 cursor-pointer text-center font-medium text-[#818181]"
-          onClick={handleAddClick}
-        >
-          Добавить в список "Мой день"
-        </p>
+        <>
+          <Icon icon="line-md:sunny-outline" width={35} color="#818181" />
+          <p
+            className="mx-4 cursor-pointer text-center font-medium text-[#818181]"
+            onClick={handleAddClick}
+          >
+            Добавить в список "Мой день"
+          </p>
+        </>
       ) : (
         <>
+          <Icon icon="line-md:sunny-outline" width={35} color="#3B82F6" />
           <p className="mx-4 cursor-default text-center font-medium text-blue-500">
             Убрать из списка "Мой день"
           </p>
           <button
-            className="text-xl font-bold text-[#818181]"
+            className="text-xl font-semibold text-blue-500"
             onClick={handleAddClick}
           >
             X
