@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
 
@@ -6,7 +5,6 @@ import { toggleComplete, toggleImportant } from "../../redux/todoSlice";
 import { toggleWindows, editTodo } from "../../redux/commonSlice";
 
 const TodoItem = ({ todo }) => {
-  const [value, setValue] = useState(false);
   const dispatch = useDispatch();
 
   const handleCompleteClick = () => {
