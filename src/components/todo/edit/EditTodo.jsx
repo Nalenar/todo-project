@@ -24,11 +24,11 @@ const EditTodo = () => {
           {todos
             .filter((todo) => todo.id === edit.id)
             .map((todo) => (
-              <>
+              <div key={todo.id}>
                 <EditTodoItem key={todo.id + "_EditTodoItem"} todo={todo} />
                 <AddToToday key={todo.id + "_AddToToday"} todo={todo} />
                 <RepeatTodo key={todo.id + "_RepeatTodo"} todo={todo} />
-              </>
+              </div>
             ))}
         </div>
 
