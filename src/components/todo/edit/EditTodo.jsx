@@ -9,8 +9,8 @@ import RepeatTodo from "./components/RepeatTodo";
 
 const EditTodo = () => {
   const todos = useSelector((state) => state.todos);
-  const editTodo = useSelector((state) => state.style.windows.editTodo);
-  const edit = useSelector((state) => state.style.edit);
+  const editTodo = useSelector((state) => state.common.windows.editTodo);
+  const edit = useSelector((state) => state.common.edit);
   const dispatch = useDispatch();
 
   return (

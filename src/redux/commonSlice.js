@@ -22,7 +22,25 @@ export const commonSlice = createSlice({
       state.styles[action.payload.style] = action.payload.string;
     },
     toggleWindows: (state, action) => {
-      state.windows[action.payload.window] = action.payload.toggle;
+      if (action.payload.window === "menu") {
+        state.windows = {
+          menu: action.payload.toggle,
+          settings: false,
+          modal: false,
+          editList: false,
+          editTodo: false,
+        };
+      } else if (action.payload.window === "settings") {
+        state.windows = {
+          menu: false,
+          settings: action.payload.toggle,
+          modal: false,
+          editList: false,
+          editTodo: false,
+        };
+      } else {
+        state.windows[action.payload.window] = action.payload.toggle;
+      }
     },
     editTodo: (state, action) => {
       state.edit.id = action.payload.id;

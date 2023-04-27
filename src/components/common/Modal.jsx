@@ -5,7 +5,7 @@ import { toggleWindows } from "../../redux/commonSlice";
 import { deleteCategory } from "../../redux/listSlice";
 
 const Modal = ({ id }) => {
-  const modal = useSelector((state) => state.style.windows["modal"]);
+  const modal = useSelector((state) => state.common.windows.modal);
   const dispatch = useDispatch();
 
   const handleYesButtonClick = () => {

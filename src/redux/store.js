@@ -7,6 +7,6 @@ export default configureStore({
   reducer: {
     todos: todoReducer,
     lists: listReducer,
-    style: commonReducer,
+    common: commonReducer,
   },
 });

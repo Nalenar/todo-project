@@ -6,7 +6,7 @@ import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 const HeaderButton = ({ icon, buttonName, buttonState }) => {
   const dispatch = useDispatch();
 
-  const handleButtonClick = (buttonName, buttonState) => {
+  const handleButtonClick = () => {
     dispatch(toggleWindows({ window: buttonName, toggle: !buttonState }));
 
     if (!buttonState) {
@@ -17,7 +17,7 @@ const HeaderButton = ({ icon, buttonName, buttonState }) => {
   };
 
   return (
-    <button onClick={() => handleButtonClick(buttonName, buttonState)}>
+    <button onClick={handleButtonClick}>
       {buttonState ? (
         <Icon icon="ion:close" color="white" width="30" />
       ) : (

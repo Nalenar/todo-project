@@ -8,8 +8,8 @@ import EditListForm from "./edit/EditListForm";
 
 const TodoList = ({ listId, listTitle, listEdit }) => {
   const todos = useSelector((state) => state.todos);
-  const blur = useSelector((state) => state.style.styles.blur);
-  const editList = useSelector((state) => state.style.windows.editList);
+  const blur = useSelector((state) => state.common.styles.blur);
+  const editList = useSelector((state) => state.common.windows.editList);
 
   return (
     <div className={`overflow-y-auto ${blur}`}>

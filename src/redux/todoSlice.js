@@ -19,7 +19,7 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const todo = {
-        id: new Date(),
+        id: state.length + 1,
         title: action.payload.title,
         completed: false,
         list: [action.payload.list],

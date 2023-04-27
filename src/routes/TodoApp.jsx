@@ -7,8 +7,8 @@ import Settings from "../components/settings/Settings";
 import EditTodo from "../components/todo/edit/EditTodo";
 
 const TodoApp = () => {
-  const menu = useSelector((state) => state.style.windows.menu);
-  const settings = useSelector((state) => state.style.windows.settings);
+  const menu = useSelector((state) => state.common.windows.menu);
+  const settings = useSelector((state) => state.common.windows.settings);
 
   return (
     <>
