@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 
 import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
-const Settings = () => {
+const Settings = ({ settings }) => {
   const dispatch = useDispatch();
 
   const handleClickAway = () => {
@@ -12,7 +12,11 @@ const Settings = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-12 z-[2] h-full w-[200px] overflow-x-hidden bg-[#111] pt-14 duration-[0.5s]">
+      <div
+        className={`fixed z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl transition-all duration-300 ${
+          settings ? "right-0" : "-right-full"
+        }`}
+      >
         <a
           href="#"
           className="block py-2 pl-8 pr-2 text-[25px] text-[#818181] no-underline duration-[0.3s] hover:text-[#f1f1f1]"
@@ -41,7 +45,9 @@ const Settings = () => {
       {/* handles click away */}
       <div
         onClick={handleClickAway}
-        className="fixed z-[1] h-full w-full bg-transparent"
+        className={`fixed z-[1] h-full w-full bg-transparent transition-all duration-0 ${
+          settings ? "right-0" : "-right-full"
+        }`}
       ></div>
     </>
   );

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 import MenuList from "./MenuList";
 
-const Menu = () => {
+const Menu = ({ menu }) => {
   const dispatch = useDispatch();
 
   const handleLinkClick = () => {
@@ -21,7 +21,11 @@ const Menu = () => {
 
   return (
     <>
-      <div className="fixed left-0 z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl">
+      <div
+        className={`fixed z-[2] h-full w-[214px] overflow-x-hidden bg-white pt-5 font-roboto shadow-2xl transition-all duration-300 ${
+          menu ? "left-0" : "-left-full"
+        }`}
+      >
         <Link
           to="/app/"
           className="mx-1 flex items-center pl-3 hover:bg-gray-100"
@@ -61,7 +65,9 @@ const Menu = () => {
       {/* handles click away */}
       <div
         onClick={handleClickAway}
-        className="fixed z-[1] h-full w-full bg-transparent"
+        className={`fixed z-[1] h-full w-full bg-transparent transition-all duration-0 ${
+          menu ? "left-0" : "-left-full"
+        }`}
       ></div>
     </>
   );
