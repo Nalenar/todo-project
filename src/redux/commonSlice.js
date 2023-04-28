@@ -1,3 +1,20 @@
+/**
+ * Redux слайс который содержит в себе всю логику связанную cо стандартными функциями
+ * @module commonSlice
+ * @function createSlice - создает слайс
+ *
+ * @param {string} name - Название
+ * @param {array} initialState - Начальное состояние
+ * @param {object} reducers - Редюсеры
+ *
+ * @param {object} state - состояние на данный момент
+ * @param {object} action - данные действия
+ *
+ * @function toggleStyles - изменяет значение выбранного стиля
+ * @function toggleWindows - изменяет значение выбранного окна
+ * @function editTodo - передает id задачи в состояние
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const commonSlice = createSlice({
@@ -48,5 +65,11 @@ export const commonSlice = createSlice({
   },
 });
 
+/** @exports commonSlice.actions  - возможные действия со стандартными функциями */
 export const { toggleStyles, toggleWindows, editTodo } = commonSlice.actions;
+
+/**
+ * @default
+ * @exports commonSlice.reducer - экспортирует по-умолчанию редюсер всего слайса
+ */
 export default commonSlice.reducer;

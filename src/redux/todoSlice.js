@@ -1,3 +1,22 @@
+/**
+ * Redux слайс который содержит в себе всю логику связанную с задачами
+ * @module todoSlice
+ * @function createSlice - Создает слайс
+ *
+ * @param {string} name - Название
+ * @param {array} initialState - Начальное состояние
+ * @param {object} reducers - Редюсеры
+ *
+ *
+ * @param {object} state - состояние на данный момент
+ * @param {object} action - данные действия
+ *
+ * @function addTodo - добавляет задание(объект) в состояние
+ * @function toggleComplete - находит нужное задание меняет заначение completed
+ * @function deleteTodo - удаляет нужное задание
+ * @function toggleList - удаляет или добавляет список в состоянии
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const todoSlice = createSlice({
@@ -46,6 +65,13 @@ export const todoSlice = createSlice({
   },
 });
 
+/** @exports todoSlice.actions - экспортирует действия */
+
 export const { addTodo, toggleComplete, deleteTodo, toggleList } =
   todoSlice.actions;
+
+/**
+ * @default
+ *  @exports todoSlice.reducer - экспортирует по-умолчанию редюсер всего слайса
+ */
 export default todoSlice.reducer;
