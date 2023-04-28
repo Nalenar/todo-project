@@ -1,3 +1,20 @@
+/**
+ * Redux слайс который содержит в себе всю логику связанную cо списками задач
+ * @module listSlice
+ * @function createSlice - создает слайс
+ *
+ * @param {string} name - Название
+ * @param {array} initialState - Начальное состояние
+ * @param {object} reducers - Редюсеры
+ *
+ * @param {object} state - состояние на данный момент
+ * @param {object} action - данные действия
+ *
+ * @function addCategory - создает список
+ * @function deleteCategory - удаляет список
+ * @function renameCategory - изменяет название списка на новое, указанное пользователем
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const listSlice = createSlice({
@@ -26,6 +43,12 @@ export const listSlice = createSlice({
   },
 });
 
+/** @exports listSlice.actions  - возможные действия со списками */
 export const { addCategory, deleteCategory, renameCategory } =
   listSlice.actions;
+
+/**
+ * @default
+ * @exports listSlice.reducer - экспортирует по-умолчанию редюсер всего слайса
+ */
 export default listSlice.reducer;

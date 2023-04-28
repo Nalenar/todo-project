@@ -1,10 +1,10 @@
 /**
  * Главный файл который использует store
  * из библиотеки @reduxjs/toolkit
- * @module
+ * @module Store
  * 
  * Экспортирует объект хранящий в себе редюсеры слайсов
- * @exports 
+ * @exports configureStore
  * 
  * @param {object} reducer - Содержит в себе название состояния и относящийся к нему редюсер
  * 
