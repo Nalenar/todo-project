@@ -11,8 +11,8 @@ const Header = ({ menu, settings }) => (
 
     <h1 className="ml-5 font-roboto text-4xl font-bold text-white">DayUp</h1>
 
-      {/* <Icon /> */}
-      <SearchBar />
+    {/* <Icon /> */}
+    <SearchBar />
 
     {/* START Settings Button */}
     <div className="ml-auto mr-1.5 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700">

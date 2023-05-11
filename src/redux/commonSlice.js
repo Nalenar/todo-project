@@ -16,6 +16,7 @@ export const commonSlice = createSlice({
     edit: {
       id: undefined,
     },
+    search: undefined,
   },
   reducers: {
     toggleStyles: (state, action) => {
@@ -45,8 +46,12 @@ export const commonSlice = createSlice({
     editTodo: (state, action) => {
       state.edit.id = action.payload.id;
     },
+    searchTodo: (state, action) => {
+      state.search = action.payload.value;
+    },
   },
 });
 
-export const { toggleStyles, toggleWindows, editTodo } = commonSlice.actions;
+export const { toggleStyles, toggleWindows, editTodo, searchTodo } =
+  commonSlice.actions;
 export default commonSlice.reducer;

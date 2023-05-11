@@ -5,6 +5,7 @@ import ErrorPage from "./routes/ErrorPage";
 import Welcome from "./routes/Welcome";
 import TodoApp from "./routes/TodoApp";
 import TodoList from "./components/todo/TodoList";
+import SearchList from "./components/search/SearchList";
 
 const App = () => {
   const lists = useSelector((state) => state.lists);
@@ -41,6 +42,8 @@ const App = () => {
                 <TodoList listId="tasks" listTitle="Задачи" listEdit={false} />
               }
             />
+            <Route path="/app/search" element={<SearchList />} />
+
             {lists.map((list) => (
               <Route
                 key={list.id}
