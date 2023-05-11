@@ -17,7 +17,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Поиск..."
-        className="form-input relative mx-auto mr-2 h-8 w-[100px] rounded-lg border-none placeholder:text-gray-300 focus:ring-transparent sm:w-[300px] md:w-[500px] lg:w-[750px]"
+        className="form-input relative mx-auto mr-2 h-8 w-[100px] rounded-lg border-none font-roboto placeholder:text-gray-300 focus:ring-transparent sm:w-[300px] md:w-[500px] lg:w-[750px]"
         onChange={handleInputChange}
       />
     </>
