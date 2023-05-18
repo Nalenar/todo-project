@@ -99,16 +99,19 @@ exports[`TodoList > shoud create Todolist with todo items in today list 1`] = `
         >
           <div
             class="mx-3 cursor-pointer"
+            role="button-complete"
           >
             <span />
           </div>
           <p
             class="flex h-full w-full items-center overflow-x-auto italic text-gray-400 line-through"
+            role="todo-item"
           >
             today
           </p>
           <button
             class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+            role="button-important"
           >
             <span />
           </button>
@@ -211,16 +214,19 @@ exports[`TodoList > shoud create Todolist with todo items in today list 1`] = `
       >
         <div
           class="mx-3 cursor-pointer"
+          role="button-complete"
         >
           <span />
         </div>
         <p
           class="flex h-full w-full items-center overflow-x-auto italic text-gray-400 line-through"
+          role="todo-item"
         >
           today
         </p>
         <button
           class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+          role="button-important"
         >
           <span />
         </button>
@@ -623,16 +629,19 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
         >
           <div
             class="mx-3 cursor-pointer"
+            role="button-complete"
           >
             <span />
           </div>
           <p
             class="flex h-full w-full items-center overflow-x-auto italic text-gray-400 line-through"
+            role="todo-item"
           >
             today
           </p>
           <button
             class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+            role="button-important"
           >
             <span />
           </button>
@@ -642,16 +651,19 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
         >
           <div
             class="mx-3 cursor-pointer"
+            role="button-complete"
           >
             <span />
           </div>
           <p
             class="flex h-full w-full items-center overflow-x-auto "
+            role="todo-item"
           >
             important
           </p>
           <button
             class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+            role="button-important"
           >
             <span />
           </button>
@@ -754,16 +766,19 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
       >
         <div
           class="mx-3 cursor-pointer"
+          role="button-complete"
         >
           <span />
         </div>
         <p
           class="flex h-full w-full items-center overflow-x-auto italic text-gray-400 line-through"
+          role="todo-item"
         >
           today
         </p>
         <button
           class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+          role="button-important"
         >
           <span />
         </button>
@@ -773,16 +788,19 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
       >
         <div
           class="mx-3 cursor-pointer"
+          role="button-complete"
         >
           <span />
         </div>
         <p
           class="flex h-full w-full items-center overflow-x-auto "
+          role="todo-item"
         >
           important
         </p>
         <button
           class="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+          role="button-important"
         >
           <span />
         </button>
