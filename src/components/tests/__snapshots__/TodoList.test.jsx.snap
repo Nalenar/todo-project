@@ -22,9 +22,10 @@ exports[`TodoList > shoud create Todolist with todo items in today list 1`] = `
             />
             <button
               class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+              role="button-edit_list"
               type="submit"
             >
-              Change
+              Изменить
             </button>
           </form>
         </div>
@@ -137,9 +138,10 @@ exports[`TodoList > shoud create Todolist with todo items in today list 1`] = `
           />
           <button
             class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+            role="button-edit_list"
             type="submit"
           >
-            Change
+            Изменить
           </button>
         </form>
       </div>
@@ -309,9 +311,10 @@ exports[`TodoList > should create TodoList with empty todos 1`] = `
             />
             <button
               class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+              role="button-edit_list"
               type="submit"
             >
-              Change
+              Изменить
             </button>
           </form>
         </div>
@@ -402,9 +405,10 @@ exports[`TodoList > should create TodoList with empty todos 1`] = `
           />
           <button
             class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+            role="button-edit_list"
             type="submit"
           >
-            Change
+            Изменить
           </button>
         </form>
       </div>
@@ -552,9 +556,10 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
             />
             <button
               class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+              role="button-edit_list"
               type="submit"
             >
-              Change
+              Изменить
             </button>
           </form>
         </div>
@@ -689,9 +694,10 @@ exports[`TodoList > should create TodoList with todo items 1`] = `
           />
           <button
             class="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+            role="button-edit_list"
             type="submit"
           >
-            Change
+            Изменить
           </button>
         </form>
       </div>

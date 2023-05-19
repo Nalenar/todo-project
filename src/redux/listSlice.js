@@ -38,7 +38,8 @@ export const listSlice = createSlice({
     },
     renameCategory: (state, action) => {
       const index = state.findIndex((list) => list.id === action.payload.id);
-      state[index].title = action.payload.title;
+      if (action.payload.title === "") return;
+      else state[index].title = action.payload.title;
     },
   },
 });
