@@ -10,14 +10,7 @@ const EditListForm = ({ id, title }) => {
 
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
-    console.log(currentValue);
-
-    if (currentValue === "") {
-      dispatch(renameCategory({ id, title }));
-    } else {
-      dispatch(renameCategory({ id, title: currentValue }));
-    }
-
+    dispatch(renameCategory({ id, title: currentValue }));
     setCurrentValue("");
     dispatch(toggleWindows({ window: "editList", toggle: false }));
   };
@@ -38,8 +31,9 @@ const EditListForm = ({ id, title }) => {
       <button
         type="submit"
         className="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600"
+        role="button-edit_list"
       >
-        Change
+        Изменить
       </button>
     </form>
   );

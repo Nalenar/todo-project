@@ -28,7 +28,11 @@ const TodoItem = ({ todo }) => {
 
   return (
     <div className="mx-3 mt-3 flex h-12 cursor-pointer items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
-      <div className="mx-3 cursor-pointer" onClick={handleCompleteClick}>
+      <div
+        className="mx-3 cursor-pointer"
+        onClick={handleCompleteClick}
+        role="button-complete"
+      >
         {todo.completed ? (
           <Icon
             icon="line-md:circle-to-confirm-circle-transition"
@@ -41,6 +45,7 @@ const TodoItem = ({ todo }) => {
       </div>
       <p
         onClick={handleTodoClick}
+        role="todo-item"
         className={`flex h-full w-full items-center overflow-x-auto ${
           todo.completed ? "italic text-gray-400 line-through" : ""
         }`}
@@ -50,6 +55,7 @@ const TodoItem = ({ todo }) => {
       <button
         onClick={handleImportantClick}
         className="mx-3 flex h-[30px] w-[30px] cursor-pointer items-center justify-center"
+        role="button-important"
       >
         {todo.list.includes("important") ? (
           <Icon icon="line-md:star-alt-filled" width={27} color="#3b82f6" />

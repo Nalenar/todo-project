@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Header from "../components/header/Header";
 import Menu from "../components/menu/Menu";
