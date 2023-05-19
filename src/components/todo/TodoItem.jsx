@@ -28,7 +28,11 @@ const TodoItem = ({ todo }) => {
 
   return (
     <div className="mx-3 mt-3 flex h-12 cursor-pointer items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
-      <div className="mx-3 cursor-pointer" onClick={handleCompleteClick} role="button-complete">
+      <div
+        className="mx-3 cursor-pointer"
+        onClick={handleCompleteClick}
+        role="button-complete"
+      >
         {todo.completed ? (
           <Icon
             icon="line-md:circle-to-confirm-circle-transition"
