@@ -36,8 +36,7 @@ const MenuList = (props) => {
             <Icon
               icon="line-md:plus-circle"
               width={25}
-              color="#3b82f6"
-              className="cursor-pointer"
+              className="cursor-pointer text-[#3b82f6] dark:text-gray-200"
             />
           </button>
           <input
@@ -45,7 +44,7 @@ const MenuList = (props) => {
             placeholder="Новая категория"
             value={value}
             onChange={(event) => setValue(event.target.value)}
-            className="form-input mr-1 h-10 w-full border-none pl-0 text-lg placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-500"
+            className="form-input mr-1 h-10 w-full border-none pl-0 text-lg placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-500 dark:bg-gray-500 dark:text-gray-200 dark:placeholder:text-gray-200 dark:focus:placeholder:text-gray-400"
           />
         </div>
       </form>

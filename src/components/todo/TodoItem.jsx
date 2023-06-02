@@ -27,7 +27,7 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <div className="mx-3 mt-3 flex h-12 cursor-pointer items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2">
+    <div className="mx-3 mt-3 flex h-12 cursor-pointer items-center rounded border border-gray-200 bg-white shadow-md last-of-type:mb-2 dark:bg-gray-600">
       <div
         className="mx-3 cursor-pointer"
         onClick={handleCompleteClick}
@@ -37,17 +37,23 @@ const TodoItem = ({ todo }) => {
           <Icon
             icon="line-md:circle-to-confirm-circle-transition"
             width="27"
-            color="#3b82f6"
+            className="text-[#3b82f6] dark:text-gray-200"
           />
         ) : (
-          <Icon icon="line-md:circle" width="27" color="#3b82f6" />
+          <Icon
+            icon="line-md:circle"
+            width="27"
+            className="text-[#3b82f6] dark:text-gray-200"
+          />
         )}
       </div>
       <p
         onClick={handleTodoClick}
         role="todo-item"
-        className={`flex h-full w-full items-center overflow-x-auto ${
-          todo.completed ? "italic text-gray-400 line-through" : ""
+        className={`flex h-full w-full items-center overflow-x-auto dark:text-gray-200 ${
+          todo.completed
+            ? "italic text-gray-400 line-through dark:text-gray-400"
+            : ""
         }`}
       >
         {todo.title}
@@ -58,9 +64,17 @@ const TodoItem = ({ todo }) => {
         role="button-important"
       >
         {todo.list.includes("important") ? (
-          <Icon icon="line-md:star-alt-filled" width={27} color="#3b82f6" />
+          <Icon
+            icon="line-md:star-alt-filled"
+            width={27}
+            className="text-[#3b82f6] dark:text-gray-200"
+          />
         ) : (
-          <Icon icon="line-md:star-alt" width={27} color="#3b82f6" />
+          <Icon
+            icon="line-md:star-alt"
+            width={27}
+            className="text-[#3b82f6] dark:text-gray-200"
+          />
         )}
       </button>
     </div>

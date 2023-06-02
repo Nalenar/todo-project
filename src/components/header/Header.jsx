@@ -2,9 +2,9 @@ import HeaderButton from "./components/HeaderButton";
 import SearchBar from "./components/SearchBar";
 
 const Header = ({ menu, settings }) => (
-  <div className="flex h-12 w-full items-center bg-blue-500">
+  <div className="flex h-12 w-full items-center bg-blue-500 dark:bg-gray-600">
     {/* START Menu Button */}
-    <div className="ml-1 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700">
+    <div className="ml-1 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700 dark:hover:bg-gray-700">
       <HeaderButton icon="line-md:menu" buttonName="menu" buttonState={menu} />
     </div>
     {/* END Menu Button */}
@@ -15,7 +15,7 @@ const Header = ({ menu, settings }) => (
     <SearchBar />
 
     {/* START Settings Button */}
-    <div className="ml-auto mr-1.5 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700">
+    <div className="ml-auto mr-1.5 flex h-11 w-11 items-center justify-center hover:border hover:border-white hover:bg-blue-700 dark:hover:bg-gray-700">
       <HeaderButton
         icon="ion:settings-outline"
         buttonName="settings"

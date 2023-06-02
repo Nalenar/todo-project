@@ -22,6 +22,7 @@ export const commonSlice = createSlice({
   initialState: {
     styles: {
       blur: "",
+      theme: "light",
     },
     windows: {
       menu: false,
@@ -34,6 +35,7 @@ export const commonSlice = createSlice({
       id: undefined,
     },
     search: undefined,
+    language: "ru",
   },
   reducers: {
     toggleStyles: (state, action) => {
@@ -66,12 +68,20 @@ export const commonSlice = createSlice({
     searchTodo: (state, action) => {
       state.search = action.payload.value;
     },
+    toggleLanguage: (state, action) => {
+      state.language = action.payload.language;
+    },
   },
 });
 
 /** @exports commonSlice.actions  - возможные действия со стандартными функциями */
-export const { toggleStyles, toggleWindows, editTodo, searchTodo } =
-  commonSlice.actions;
+export const {
+  toggleStyles,
+  toggleWindows,
+  editTodo,
+  searchTodo,
+  toggleLanguage,
+} = commonSlice.actions;
 
 /**
  * @default
