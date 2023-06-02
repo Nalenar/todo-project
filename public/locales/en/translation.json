@@ -1,8 +1,45 @@
 {
-  "Language": {
-    "1": "Language"
+  "Settings": {
+    "darkmode": "Dark Theme",
+    "language": "Language"
   },
-  "Darkmode": {
-    "1": "Darkmode"
+  "Dropdown": {
+    "change": "Change",
+    "delete": "Delete"
+  },
+  "Modal": {
+    "text": "Are you sure want to delete this list?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "Header": {
+    "search": "Search..."
+  },
+  "Menu": {
+    "day": "My day",
+    "important": "Important",
+    "tasks": "Tasks",
+    "new": "New list"
+  },
+  "editList": "Change",
+  "Lists": {
+    "day": "My day",
+    "important": "Important",
+    "tasks": "Tasks"
+  },
+  "Todo": {
+    "add": "Enter a task",
+    "addButton": "Add"
+  },
+  "editTodo": {
+    "addToToday": {
+      "add": "Add to \"My day\" list",
+      "delete": "Delete from \"My day\" list"
+    },
+    "footer": "Created today",
+    "repeat": {
+      "tomorow": "Repeat tomorow",
+      "in": "Repeat in..."
+    }
   }
 }

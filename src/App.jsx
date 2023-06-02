@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import ErrorPage from "./routes/ErrorPage";
 import Welcome from "./routes/Welcome";
@@ -9,6 +10,7 @@ import SearchList from "./components/search/SearchList";
 
 const App = () => {
   const lists = useSelector((state) => state.lists);
+  const { t } = useTranslation();
 
   return (
     <BrowserRouter>
@@ -21,7 +23,7 @@ const App = () => {
               element={
                 <TodoList
                   listId="today"
-                  listTitle="Мой день"
+                  listTitle={t("Lists.day")}
                   listEdit={false}
                 />
               }
@@ -31,7 +33,7 @@ const App = () => {
               element={
                 <TodoList
                   listId="important"
-                  listTitle="Важное"
+                  listTitle={t("Lists.important")}
                   listEdit={false}
                 />
               }
@@ -39,7 +41,11 @@ const App = () => {
             <Route
               path="/app/tasks"
               element={
-                <TodoList listId="tasks" listTitle="Задачи" listEdit={false} />
+                <TodoList
+                  listId="tasks"
+                  listTitle={t("Lists.tasks")}
+                  listEdit={false}
+                />
               }
             />
             <Route path="/app/search" element={<SearchList />} />

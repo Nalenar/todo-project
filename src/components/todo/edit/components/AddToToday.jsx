@@ -1,10 +1,12 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { toggleList } from "../../../../redux/todoSlice";
 
 const AddToToday = ({ todo }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleAddClick = () => {
     dispatch(
@@ -29,7 +31,7 @@ const AddToToday = ({ todo }) => {
             className="text-2xl text-[#818181] dark:text-gray-200 lg:text-4xl"
           />
           <p className="mx-4 text-center font-medium text-[#818181] dark:text-gray-200">
-            Добавить в список "Мой день"
+            {t("editTodo.addToToday.add")}
           </p>
         </div>
       ) : (
@@ -39,7 +41,7 @@ const AddToToday = ({ todo }) => {
             className="text-2xl text-blue-500 dark:text-gray-200 lg:text-4xl"
           />
           <p className="mx-4 text-center font-medium text-blue-500 dark:text-gray-200">
-            Убрать из списка "Мой день"
+            {t("editTodo.addToToday.delete")}
           </p>
           <button className="text-xl font-semibold text-blue-500 dark:text-gray-200">
             X

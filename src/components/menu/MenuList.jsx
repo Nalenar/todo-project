@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { addCategory } from "../../redux/listSlice";
 
@@ -9,6 +10,7 @@ import MenuItem from "./MenuItem";
 const MenuList = (props) => {
   const lists = useSelector((state) => state.lists);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const [value, setValue] = useState("");
 
@@ -41,7 +43,7 @@ const MenuList = (props) => {
           </button>
           <input
             type="text"
-            placeholder="Новая категория"
+            placeholder={t("Menu.new")}
             value={value}
             onChange={(event) => setValue(event.target.value)}
             className="form-input mr-1 h-10 w-full border-none pl-0 text-lg placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-500 dark:bg-gray-500 dark:text-gray-200 dark:placeholder:text-gray-200 dark:focus:placeholder:text-gray-400"

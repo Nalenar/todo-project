@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import { addTodo } from "../../redux/todoSlice";
 
 const TodoAddForm = ({ id }) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState("");
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
@@ -47,7 +49,7 @@ const TodoAddForm = ({ id }) => {
             type="text"
             name="todo"
             value={value}
-            placeholder="Добавьте задачу"
+            placeholder={t("Todo.add")}
             onChange={handleInputChange}
             className="form-input w-full border-none font-roboto placeholder:text-blue-500 focus:ring-transparent focus:placeholder:text-gray-300 dark:bg-gray-600 dark:text-gray-200 dark:placeholder:text-gray-200"
           />
@@ -63,7 +65,7 @@ const TodoAddForm = ({ id }) => {
             className="mx-3 rounded-md border bg-white px-2 py-[2px] font-roboto text-blue-500 hover:bg-blue-700 hover:text-white dark:border-none dark:bg-gray-300 dark:text-gray-600 "
             type="submit"
           >
-            Добавить
+            {t("Todo.addButton")}
           </button>
         </div>
       </div>

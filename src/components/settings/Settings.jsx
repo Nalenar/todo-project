@@ -50,7 +50,7 @@ const Settings = ({ settings }) => {
             className="text-[#818181] dark:text-gray-200"
           />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040] dark:text-gray-200">
-            {t("Darkmode.1")}
+            {t("Settings.darkmode")}
           </span>
           {theme === "light" ? (
             <Icon
@@ -69,7 +69,7 @@ const Settings = ({ settings }) => {
         </div>
         <div className="mx-1 flex items-center pl-3 hover:bg-gray-100 dark:hover:bg-gray-600">
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] dark:text-gray-200">
-            {t("Language.1")}
+            {t("Settings.language")}
           </span>
           <div className="ml-auto mr-3 flex items-center justify-center">
             <Icon

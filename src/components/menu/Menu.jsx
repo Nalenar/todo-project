@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
@@ -8,6 +9,7 @@ import MenuList from "./MenuList";
 
 const Menu = ({ menu }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleLinkClick = () => {
     dispatch(toggleWindows({ window: "menu", toggle: false }));
@@ -37,7 +39,7 @@ const Menu = ({ menu }) => {
             className="text-[#818181] dark:text-gray-200"
           />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040] dark:text-gray-200">
-            Мой день
+            {t("Menu.day")}
           </span>
         </Link>
         <Link
@@ -51,7 +53,7 @@ const Menu = ({ menu }) => {
             className="text-[#818181] dark:text-gray-200"
           />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040] dark:text-gray-200">
-            Важное
+            {t("Menu.important")}
           </span>
         </Link>
         <Link
@@ -65,7 +67,7 @@ const Menu = ({ menu }) => {
             className="text-[#818181] dark:text-gray-200"
           />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040] dark:text-gray-200">
-            Задачи
+            {t("Menu.tasks")}
           </span>
         </Link>
 

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import { toggleWindows } from "../../redux/commonSlice";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleDeleteButtonClick = () => {
     dispatch(toggleWindows({ window: "modal", toggle: true }));
@@ -44,7 +46,7 @@ const Dropdown = () => {
             className="dark:text-gray-200"
           />
           <span className="ml-1 font-roboto text-xl dark:text-gray-200">
-            Изменить
+            {t("Dropdown.change")}
           </span>
         </button>
         <hr />
@@ -53,7 +55,9 @@ const Dropdown = () => {
           onClick={handleDeleteButtonClick}
         >
           <Icon icon="ion:trash" width={27} color="#ef4444" />
-          <span className="ml-1 font-roboto text-xl text-red-500">Удалить</span>
+          <span className="ml-1 font-roboto text-xl text-red-500">
+            {t("Dropdown.delete")}
+          </span>
         </button>
       </div>
     </>
