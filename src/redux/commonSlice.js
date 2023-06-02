@@ -35,32 +35,32 @@ export const commonSlice = createSlice({
       id: undefined,
     },
     search: undefined,
+    language: "ru",
   },
   reducers: {
     toggleStyles: (state, action) => {
       state.styles[action.payload.style] = action.payload.string;
     },
     toggleWindows: (state, action) => {
-      // if (action.payload.window === "menu") {
-      //   state.windows = {
-      //     menu: action.payload.toggle,
-      //     settings: false,
-      //     modal: false,
-      //     editList: false,
-      //     editTodo: false,
-      //   };
-      // } else if (action.payload.window === "settings") {
-      //   state.windows = {
-      //     menu: false,
-      //     settings: action.payload.toggle,
-      //     modal: false,
-      //     editList: false,
-      //     editTodo: false,
-      //   };
-      // } else {
-      //   state.windows[action.payload.window] = action.payload.toggle;
-      // }
-      state.windows[action.payload.window] = action.payload.toggle;
+      if (action.payload.window === "menu") {
+        state.windows = {
+          menu: action.payload.toggle,
+          settings: false,
+          modal: false,
+          editList: false,
+          editTodo: false,
+        };
+      } else if (action.payload.window === "settings") {
+        state.windows = {
+          menu: false,
+          settings: action.payload.toggle,
+          modal: false,
+          editList: false,
+          editTodo: false,
+        };
+      } else {
+        state.windows[action.payload.window] = action.payload.toggle;
+      }
     },
     editTodo: (state, action) => {
       state.edit.id = action.payload.id;
@@ -68,12 +68,20 @@ export const commonSlice = createSlice({
     searchTodo: (state, action) => {
       state.search = action.payload.value;
     },
+    toggleLanguage: (state, action) => {
+      state.language = action.payload.language;
+    },
   },
 });
 
 /** @exports commonSlice.actions  - возможные действия со стандартными функциями */
-export const { toggleStyles, toggleWindows, editTodo, searchTodo } =
-  commonSlice.actions;
+export const {
+  toggleStyles,
+  toggleWindows,
+  editTodo,
+  searchTodo,
+  toggleLanguage,
+} = commonSlice.actions;
 
 /**
  * @default

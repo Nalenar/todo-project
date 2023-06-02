@@ -18,7 +18,7 @@ const AddToToday = ({ todo }) => {
 
   return (
     <div
-      className="mt-5 flex h-16 w-full cursor-pointer items-center justify-center rounded border border-gray-200 bg-white px-4 shadow-md hover:bg-gray-100"
+      className="mt-5 flex h-16 w-full cursor-pointer items-center justify-center rounded border border-gray-200 bg-white px-4 shadow-md hover:bg-gray-100 dark:bg-gray-600"
       onClick={handleAddClick}
       role="button-add_to_today"
     >
@@ -26,9 +26,9 @@ const AddToToday = ({ todo }) => {
         <div className="flex items-center justify-center">
           <Icon
             icon="line-md:sunny-outline"
-            className="text-2xl text-[#818181] lg:text-4xl"
+            className="text-2xl text-[#818181] dark:text-gray-200 lg:text-4xl"
           />
-          <p className="mx-4 text-center font-medium text-[#818181]">
+          <p className="mx-4 text-center font-medium text-[#818181] dark:text-gray-200">
             Добавить в список "Мой день"
           </p>
         </div>
@@ -36,12 +36,14 @@ const AddToToday = ({ todo }) => {
         <div className="flex items-center justify-center">
           <Icon
             icon="line-md:sunny-outline"
-            className="text-2xl text-blue-500 lg:text-4xl"
+            className="text-2xl text-blue-500 dark:text-gray-200 lg:text-4xl"
           />
-          <p className="mx-4 text-center font-medium text-blue-500">
+          <p className="mx-4 text-center font-medium text-blue-500 dark:text-gray-200">
             Убрать из списка "Мой день"
           </p>
-          <button className="text-xl font-semibold text-blue-500">X</button>
+          <button className="text-xl font-semibold text-blue-500 dark:text-gray-200">
+            X
+          </button>
         </div>
       )}
     </div>

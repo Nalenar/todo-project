@@ -17,7 +17,7 @@ const EditTodoFooter = ({ todo }) => {
   };
 
   return (
-    <div className="flex h-[10%] items-center justify-between border-t text-gray-500">
+    <div className="flex h-[10%] items-center justify-between border-t text-gray-500 dark:border-t-gray-200 dark:text-gray-200">
       <button onClick={handleEditClose} role="button-close_edit">
         <Icon icon="line-md:menu-fold-right" className="text-3xl" />
       </button>

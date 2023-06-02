@@ -16,7 +16,7 @@ const EditTodo = () => {
   return (
     <>
       <div
-        className={`fixed z-[2] h-full w-full bg-[#efefef] p-3 font-roboto shadow-2xl transition-all duration-300 lg:w-[300px] ${
+        className={`fixed z-[2] h-full w-full bg-[#efefef] p-3 font-roboto shadow-2xl transition-all duration-300 dark:bg-gray-500 lg:w-[300px] ${
           editTodo ? "right-0" : "-right-full"
         }`}
       >

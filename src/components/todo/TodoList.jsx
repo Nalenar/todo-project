@@ -18,7 +18,7 @@ const TodoList = ({ listId, listTitle, listEdit }) => {
           <EditListForm id={listId} title={listTitle} />
         ) : (
           <>
-            <h2 className="mr-4 text-center font-roboto text-3xl font-bold text-blue-800">
+            <h2 className="mr-4 text-center font-roboto text-3xl font-bold text-blue-800 dark:text-gray-200">
               {listTitle}
             </h2>
             {listEdit ? <Dropdown /> : <></>}
