@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 
 import { toggleWindows, toggleStyles } from "../../redux/commonSlice";
 
 const Settings = ({ settings }) => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.common.styles.theme);
+  const { t, i18n } = useTranslation();
 
   const handleClickAway = () => {
     dispatch(toggleWindows({ window: "settings", toggle: false }));
@@ -27,6 +29,10 @@ const Settings = ({ settings }) => {
     }
   };
 
+  const handleLanguageToggle = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <>
       <div
@@ -44,7 +50,7 @@ const Settings = ({ settings }) => {
             className="text-[#818181] dark:text-gray-200"
           />
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] hover:text-[#404040] dark:text-gray-200">
-            Темная тема
+            {t("Darkmode.1")}
           </span>
           {theme === "light" ? (
             <Icon
@@ -61,20 +67,22 @@ const Settings = ({ settings }) => {
             />
           )}
         </div>
-        <div className="mx-1 flex cursor-pointer items-center pl-3 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <div className="mx-1 flex items-center pl-3 hover:bg-gray-100 dark:hover:bg-gray-600">
           <span className="ml-2 block py-2 pr-2 text-lg text-[#818181] no-underline duration-[0.3s] dark:text-gray-200">
-            Язык
+            {t("Language.1")}
           </span>
           <div className="ml-auto mr-3 flex items-center justify-center">
             <Icon
               icon="circle-flags:ru"
               width={30}
-              className="mr-3 dark:rounded-full dark:border-2 dark:border-gray-200"
+              className="mr-3 cursor-pointer dark:rounded-full dark:border-2 dark:border-gray-200"
+              onClick={() => handleLanguageToggle("ru")}
             />
             <Icon
               icon="circle-flags:us"
               width={30}
-              className="dark:rounded-full dark:border-2 dark:border-gray-200"
+              className="cursor-pointer dark:rounded-full dark:border-2 dark:border-gray-200"
+              onClick={() => handleLanguageToggle("en")}
             />
           </div>
         </div>
