@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { renameCategory } from "../../../redux/listSlice";
 import { toggleWindows } from "../../../redux/commonSlice";
@@ -7,6 +8,7 @@ import { toggleWindows } from "../../../redux/commonSlice";
 const EditListForm = ({ id, title }) => {
   const [currentValue, setCurrentValue] = useState("");
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
@@ -33,7 +35,7 @@ const EditListForm = ({ id, title }) => {
         className="h-10 rounded-md bg-blue-500 px-2 py-1 font-roboto text-xl text-white shadow-md hover:bg-blue-600 dark:bg-gray-300 dark:text-gray-600"
         role="button-edit_list"
       >
-        Изменить
+        {t("editList")}
       </button>
     </form>
   );

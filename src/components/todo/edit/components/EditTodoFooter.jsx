@@ -1,11 +1,13 @@
 import { Icon } from "@iconify/react";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { toggleWindows } from "../../../../redux/commonSlice";
 import { deleteTodo } from "../../../../redux/todoSlice";
 
 const EditTodoFooter = ({ todo }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleEditClose = () => {
     dispatch(toggleWindows({ window: "editTodo", toggle: false }));
@@ -21,7 +23,7 @@ const EditTodoFooter = ({ todo }) => {
       <button onClick={handleEditClose} role="button-close_edit">
         <Icon icon="line-md:menu-fold-right" className="text-3xl" />
       </button>
-      <p className="text-lg">Создано сегодня</p>
+      <p className="text-lg">{t("editTodo.footer")}</p>
       <button onClick={handleDeleteClick} role="button-delete_todo">
         <Icon icon="ion:trash" className="text-3xl" />
       </button>
